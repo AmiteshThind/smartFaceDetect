@@ -17,9 +17,6 @@ const database= knex({
   }
 });
  
-  
-
-
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -37,17 +34,6 @@ app.get('/profile/:userid', (req,res) => {profile.handleProfile(req,res,database
 
 app.put('/image',(req,res) => {image.handleImage(req,res,database)});
 
-
-
 app.listen(3001,() => {
     console.log("app is running on port 3001");
 });
-
-
-/*
-/-->res =this is working
-/signin --> POST
-/register --> POST
-/profile/:userid --> GET = user
-/image -->PUT
-*/
